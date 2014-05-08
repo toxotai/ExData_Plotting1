@@ -4,8 +4,8 @@ data <- read.table("household_power_consumption.txt",
                    "household_power_consumption.txt",
                    nrow = 1, header = TRUE, sep=";")))
 
-wDays <- strptime(paste(data$Date, data$Time), format='%d/%m/%Y %H:%M:%S')
-plot(wDays, data$Global_active_power, type="l", xlab = "", ylab="Global Active Power (kilowatts)")
+days <- strptime(paste(data$Date, data$Time), format='%d/%m/%Y %H:%M:%S')
+plot(days, data$Global_active_power, type="l", xlab = "", ylab="Global Active Power (kilowatts)")
 
 dev.copy(png, file = "plot2.png")
 dev.off()
